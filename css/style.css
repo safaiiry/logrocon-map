@@ -3,11 +3,112 @@
 
 }
 
-#map {
-    width: 600px; 
-    height: 400px;
+body {
+    display: flex;
+    flex-direction: row;
 }
 
-fieldset {
-    float: left;
+.marker-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+
+#map {
+    flex: 1;
+    height: 100vh;
+}
+
+.marker-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.marker-item {
+    position: relative;
+    padding-right: 30px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+.remove-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    color: white;
+    background-color: #00a2ff; 
+}
+
+
+.marker-item:hover {
+    background-color: #f0f0f0;
+}
+
+.marker-item:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.marker-item::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #00a2ff; 
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around; 
+    margin-top: auto; 
+    padding: 10px;    
+}
+
+button {
+    padding: 5px 10px;    
+    font-size: 12px;      
+    background-color: #00a2ff; 
+    color: white;          
+    border: none;          
+    border-radius: 5px;   
+    cursor: pointer;       
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+
+#filterInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#filterInput:focus {
+    border-color: #00a2ff; 
+    outline: none;         
+    box-shadow: 0 0 5px rgba(10, 236, 225, 0.5); 
 }
