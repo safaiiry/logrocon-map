@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Map</title>
+        <link rel="stylesheet" href="./leaflet/leaflet.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./leaflet/leaflet.js"></script>
+    </head>
+
+    <body>
+        <div id="map"></div>
+        <fieldset>
+            <label for="cities">Выберите город:</label>
+            <input list="city_options" id="cities" name="city_name">
+            <datalist id="city_options">
+                <option value="Москва">
+                <option value="Санкт-Петербург">
+                <option value="Калуга">
+            </datalist>
+        </fieldset>
+
+    </body>
+    <script src="./js/script.js"></script>
+</html>
+
