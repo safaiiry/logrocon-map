@@ -1,5 +1,5 @@
 // Определяем карту, координаты центра и начальный масштаб
-const map = L.map('map').setView([50, 90], 3);
+const map = L.map('map').setView([55.7457, 37.6253], 11);
 let markers = [];
 
 // Добавляем на нашу карту слой OpenStreetMap
