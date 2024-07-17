@@ -9,18 +9,18 @@
     </head>
 
     <body>
+        <div class="marker-container">
+            <input type="text" id="filterInput" placeholder="Фильтр по координатам..." />
+            <ul class="marker-list">
+            </ul>
+            <div class="button-container">
+                <button id="saveDataBtn">Сохранить данные</button>
+                <button id="clearDataBtn">Очистить данные</button>
+            </div>
+        </div>
         <div id="map"></div>
-        <fieldset>
-            <label for="cities">Выберите город:</label>
-            <input list="city_options" id="cities" name="city_name">
-            <datalist id="city_options">
-                <option value="Москва">
-                <option value="Санкт-Петербург">
-                <option value="Калуга">
-            </datalist>
-        </fieldset>
-
     </body>
     <script src="./js/script.js"></script>
+    <script src="./js/saveData.js"></script>
 </html>
 
