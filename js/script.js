@@ -1,5 +1,5 @@
 // Определяем карту, координаты центра и начальный масштаб
-const map = L.map('map').setView([50, 90], 3);
+const map = L.map('map').setView([57.421294, 34.51752], 6);
 let markers = [];
 
 // Добавляем на нашу карту слой OpenStreetMap
@@ -13,6 +13,10 @@ map.on('click', function(e) {
 
     const liElement = document.createElement('li');
     liElement.className = 'marker-item';
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'marker-text';
+    textDiv.innerHTML = `Выбранная точка: ${lat} , ${lng}`;
 
     // Добавляем новый маркер
     const marker = L.marker([lat, lng]).addTo(map);
@@ -29,9 +33,9 @@ map.on('click', function(e) {
         liElement.remove();
     };
 
-    liElement.innerHTML = `Выбранная точка: ${lat} , ${lng}`;
     liElement.setAttribute('data-latlng', `${lat},${lng}`);
     liElement.marker = marker;
+    liElement.appendChild(textDiv);
     liElement.appendChild(removeButton);
     document.querySelector('.marker-list').appendChild(liElement);
 });

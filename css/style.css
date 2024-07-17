@@ -32,12 +32,17 @@ body {
 
 .marker-item {
     position: relative;
-    padding-right: 30px;
     background-color: #f9f9f9;
-    padding: 15px;
     border-bottom: 1px solid #ccc;
     transition: background-color 0.3s;
-    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.marker-text {
+    padding: 15px;
+    flex-grow: 1; 
 }
 
 .remove-button {
@@ -50,6 +55,7 @@ body {
     color: red;
     font-size: 16px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .remove-button:hover {
@@ -66,7 +72,7 @@ body {
     background-color: #f3f3f3;
 }
 
-.marker-item::before {
+.marker-text::before {
     content: '';
     display: inline-block;
     width: 10px;
