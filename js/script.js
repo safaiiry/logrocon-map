@@ -33,20 +33,23 @@ map.on('click', function(e) {
         liElement.remove();
     };
 
-    liElement.setAttribute('data-latlng', `${lat},${lng}`);
+    textDiv.setAttribute('data-latlng', `${lat},${lng}`);
     liElement.marker = marker;
     liElement.appendChild(textDiv);
     liElement.appendChild(removeButton);
     document.querySelector('.marker-list').appendChild(liElement);
 });
 
-// Центрирование карты по клику на элемент списка
+// Центрирование карты по клику на элемент списка 
+
 document.querySelector('.marker-list').addEventListener('click', function(e) {
     const latlng = e.target.getAttribute('data-latlng').split(',');
     const lat = parseFloat(latlng[0]);
     const lng = parseFloat(latlng[1]);
     map.setView([lat, lng], 10); 
-});
+}); 
+
+
 
 // Очистка данных 
 document.getElementById('clearDataBtn').addEventListener('click', function() {
